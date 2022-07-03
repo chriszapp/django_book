@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            Beginner App
+        </title>
+        {% load static %}
+        <link href = "{% static "/route_app_3/css/style.css" %}" rel = "stylesheet" type = "text/css"/>
+    </head>
+    <body>
+        <h1>
+            Hello {{data.name}}!!
+        </h1>
+        <article>
+            Dai che andiamo avanti!!
+        </article>
+        <span>
+            I'm {{data.years}} year{{ data.years | pluralize}} old.
+            {% if data.years < 10 %}
+                You are a child
+            {% elif data.years < 18 %}
+                You are a teenager
+            {% else %}
+                You are an adult
+            {% endif %}
+        </span>
+        <p> 
+            And your favorite cities are:
+            <ul>
+                {% for city in data.cities %}
+                    <li>
+                        <a href = '{{city}}'>{{city | title}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            Oppure vai a <a href='{% url 'detail' 'Roma' %}'>Roma</a>
+        </p>
+    </body>
+</html>

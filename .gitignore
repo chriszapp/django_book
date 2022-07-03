@@ -1,0 +1,5 @@
+django_book/.coverage
+django_book/db.sqlite3
+django_book/django_book/__pycache__/*
+django_book/route_app_3/__pycache__/*
+django_book/route_app_3/migrations/__pycache__/*
